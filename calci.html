@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>MY CALCULATOR</title>
+        <style>
+            table{
+                background-color: aqua;
+                color: blueviolet;
+                width: 30%;
+                height: 50%;
+                align-self: baseline;
+            }
+            button{
+                width: 100%;
+            }
+            body{
+               background-color: black;
+            }
+            h1{
+                color: whitesmoke;
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    <body >
+        <center><h1>MY CALCULATOR</h1>
+        <table>
+            <tr>
+                <td colspan="3" ><input value="0" id="userinput" type="text"></td>
+                <td><button onclick="clearall()">AC</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('1')">1</button></td>
+                <td><button onclick="dis('2')">2</button></td>
+                <td><button onclick="dis('3')">3</button></td>
+                <td><button onclick="dis('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('4')">4</button></td>
+                <td><button onclick="dis('5')">5</button></td>
+                <td><button onclick="dis('6')">6</button></td>
+                <td><button onclick="dis('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('7')">7</button></td>
+                <td><button onclick="dis('8')">8</button></td>
+                <td><button onclick="dis('9')">9</button></td>
+                <td><button onclick="dis('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('0')">0</button></td>
+                <td><button onclick="dis('.')">.</button></td>
+                <td><button onclick="dis('/')">/</button></td>
+                <td><button onclick="solve()">=</button></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+    function dis(x)
+    {
+        if (document.getElementById("userinput").value==0 )
+    {
+      document.getElementById("userinput").value="";
+      document.getElementById("userinput").value=x;
+    }
+        else
+        {
+            document.getElementById("userinput").value += x;
+        }
+    }
+    function solve()
+    {
+        var x = document.getElementById("userinput").value;
+        var y = eval(x);
+        document.getElementById("userinput").value=y;
+    }
+    function clearall() {
+            document.getElementById("userinput").value = 0;
+        }
+</script>
+</body>
+</html>
